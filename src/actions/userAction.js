@@ -35,7 +35,7 @@ export const login =(email,password)=> async(dispatch)=>{
         const config={headers: {"Content-Type": "application/json"}};
 
         const {data}=await axios.post(
-            `/api/v1/login`,
+            `${process.env.REACT_APP_BACKEND_URI}/api/v1/login`,
             {email,password},
             config
         );
@@ -53,7 +53,7 @@ export const register=(userData)=>async (dispatch)=>{
 
         const config={headers:{"Content-Type": "multipart/form-data"}};
 
-        const {data}=await axios.post(`/api/v1/register`,userData,config);
+        const {data}=await axios.post(`${process.env.REACT_APP_BACKEND_URI}/api/v1/register`,userData,config);
 
         dispatch({type:REGISTER_USER_SUCCESS,payload:data.user});
 
@@ -70,7 +70,7 @@ export const loadUser =()=> async(dispatch)=>{
 
        
 
-        const {data}=await axios.get(`/api/v1/me`);
+        const {data}=await axios.get(`${process.env.REACT_APP_BACKEND_URI}/api/v1/me`);
         dispatch({type: LOAD_USER_SUCCESS,payload:data.user});
 
     } catch (error) {
@@ -82,7 +82,7 @@ export const loadUser =()=> async(dispatch)=>{
 
 export const logout =()=> async(dispatch)=>{
     try {
-        await axios.get(`/api/v1/logout`);
+        await axios.get(`${process.env.REACT_APP_BACKEND_URI}/api/v1/logout`);
         dispatch({type: LOGOUT_SUCCESS});
 
     } catch (error) {
@@ -98,7 +98,7 @@ export const updateProfile=(userData)=>async (dispatch)=>{
 
         const config={headers:{"Content-Type": "multipart/form-data"}};
 
-        const {data}=await axios.put(`/api/v1/me/update`,userData,config);
+        const {data}=await axios.put(`${process.env.REACT_APP_BACKEND_URI}/api/v1/me/update`,userData,config);
 
         dispatch({type:UPDATE_PROFILE_SUCCESS,payload:data.success});
 
@@ -114,7 +114,7 @@ export const updatePassword=(passwords)=>async (dispatch)=>{
 
         const config={headers:{"Content-Type": "application/json"}};
 
-        const {data}=await axios.put(`/api/v1/password/update`,passwords,config);
+        const {data}=await axios.put(`${process.env.REACT_APP_BACKEND_URI}/api/v1/password/update`,passwords,config);
 
         dispatch({type:UPDATE_PASSWORD_SUCCESS,payload:data.success});
 
@@ -132,7 +132,7 @@ export const forgotPassword =(email)=> async(dispatch)=>{
         const config={headers: {"Content-Type": "application/json"}};
 
         const {data}=await axios.post(
-            `/api/v1/password/forgot`,
+            `${process.env.REACT_APP_BACKEND_URI}/api/v1/password/forgot`,
             email,
             config
         );
@@ -152,7 +152,7 @@ export const resetPassword =(token,passwords)=> async(dispatch)=>{
         const config={headers: {"Content-Type": "application/json"}};
 
         const {data}=await axios.put(
-            `/api/v1/password/reset/${token}`,
+            `${process.env.REACT_APP_BACKEND_URI}/api/v1/password/reset/${token}`,
             passwords,
             config
         );
