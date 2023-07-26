@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'https://kmart-backend.vercel.app/',
+      target: 'https://kmart-backend.vercel.app',
       changeOrigin: true,
     })
   );  
