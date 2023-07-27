@@ -1,3 +1,18 @@
+### Kmart is a cutting-edge ecommerce platform for online shopping for customers worldwide. With a user-friendly interface, advanced features, and a commitment to customer satisfaction, Kmart aims to become a go-to destination for online shoppers.
+
+### Key Features:
+
+#### Extensive Product Catalog
+#### Intuitive User Interface
+#### Personalized Recommendations
+#### Secure Payment and Checkout
+#### Smart Search Functionality
+#### Customer Reviews and Ratings
+<br>
+<br>
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
